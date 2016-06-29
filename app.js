@@ -1,8 +1,16 @@
 //Lets require/import the HTTP module
 var http = require('http');
+var express = require('express');
 
+
+var app = express();
+
+
+app.use('/', function(res,req){
+    res.status(200).json({message:'OK'});
+})
 //Lets define a port we want to listen to
-const PORT=80;
+const PORT=9999;
 
 //We need a function which handles requests and send response
 function handleRequest(request, response){
